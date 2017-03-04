@@ -1,0 +1,10 @@
+{% extends 'SonataAdminBundle:CRUD:base_list_field.html.twig' %}
+{% block field %}
+{% for d in object.employe %}
+
+    <div> 
+        {{ d.nom}}
+    </div>
+        {% endfor %}
+       
+{% endblock %}

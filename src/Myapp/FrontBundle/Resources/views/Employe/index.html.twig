@@ -1,0 +1,40 @@
+{% extends 'FrontBundle::layout.html.twig' %}
+
+{% block body %}
+
+    <table class="table table-striped">
+    <tr>
+        <td>ID</td>
+        <td>dep</td>
+         <td>Nom</td>
+        <td>prenom</td>
+        <td>date</td>
+
+        <td>sexe</td>
+        <td>pays</td>
+        <td>projet</td>
+              
+              
+    </tr>
+
+{% for d in employe %}
+    <tr>
+        <td>{{ d.id}}</td>
+          <td>{{ d.departement.nom}}</td>
+        <td>{{ d.nom}}</td>
+         <td>{{ d.prenom}}</td>
+    <td>{{ d.date |date('d-m-y')}}</td>
+
+        <td>{{ d.sexe}}</td>
+        <td>{{ d.pays}}</td>
+        <td>
+            {% for p in d.projet %}
+                {{ p.nom }}
+                <br>
+            {% endfor %}
+        <td>
+    </tr>
+{% endfor %}
+</table>
+
+{% endblock %}

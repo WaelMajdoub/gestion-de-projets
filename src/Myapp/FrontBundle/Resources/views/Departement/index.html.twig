@@ -1,0 +1,26 @@
+{% extends 'FrontBundle::layout.html.twig' %}
+
+{% block body %}
+
+    <table border=1>
+        <tr>
+            <td>ID</td>
+            <td>Nom</td>
+            <td>Departement</td>
+        </tr>
+
+    {% for d in departement %}
+        <tr>
+            <td>{{ d.id}}</td>
+            <td>{{ d.nom}}</td>
+            <td>
+                {% for e in d.employe %}
+                    {{ e.nom }}<br>
+                {% endfor %}
+
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+
+{% endblock %}
